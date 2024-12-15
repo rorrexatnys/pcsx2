@@ -18,7 +18,7 @@
 #include <QtGui/QPainter>
 
 static constexpr std::array<const char*, GameListModel::Column_Count> s_column_names = {
-	{"Type", "Code", "Title", "File Title", "CRC", "Time Played", "Last Played", "Size", "Region", "Compatibility", "Cover"}};
+	{"Type", "Code", "Title", "File Title", "CRC", "Time Played", "Last Played", "Size", "Region", "Compatibility", "Cover", "Manual"}};
 
 static constexpr int COVER_ART_WIDTH = 350;
 static constexpr int COVER_ART_HEIGHT = 512;
@@ -323,6 +323,11 @@ QVariant GameListModel::data(const QModelIndex& index, int role) const
 					else
 						return {};
 				}
+
+				case Column_Manual:
+					{
+						return {};
+					}
 
 				default:
 					return {};
