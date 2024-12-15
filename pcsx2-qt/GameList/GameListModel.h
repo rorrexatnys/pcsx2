@@ -33,6 +33,7 @@ public:
 		Column_Region,
 		Column_Compatibility,
 		Column_Cover,
+		Column_Manual,
 
 		Column_Count
 	};
