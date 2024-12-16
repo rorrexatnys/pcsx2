@@ -5157,6 +5157,12 @@ void FullscreenUI::DrawPauseMenu(MainWindowType type)
 					SwitchToGameSettings();
 				}
 
+				if (just_focused)
+					ImGui::SetFocusID(ImGui::GetID(FSUI_ICONSTR(ICON_FA_PLAY, "Game Manual")), ImGui::GetCurrentWindow());
+
+				if (ActiveButton(FSUI_ICONSTR(ICON_FA_PLAY, "Game Manual"), false) || WantsToCloseMenu())
+					ClosePauseMenu();				
+
 				if (ActiveButton(FSUI_ICONSTR(ICON_FA_TROPHY, "Achievements"), false, Achievements::HasAchievementsOrLeaderboards()))
 				{
 					// skip second menu and go straight to cheevos if there's no lbs
